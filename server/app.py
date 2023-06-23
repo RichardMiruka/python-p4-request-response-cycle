@@ -16,7 +16,12 @@ def index():
     appname = current_app.name
     return f'''<h1>The host of this page is {host}</h1>'
                <h2>The name of this application is {appname}</h2>
-               <h3> The path of this apllication on the user's device is {g.path}</h3>'''
+               <h3> The path of this apllication on the user's device is {g.path}</h3>''',
+               
+    status_code = 202
+    headers = {}
+    
+    return make_response(resoonse_body, status_code, headers)
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True) 
